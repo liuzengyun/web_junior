@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js1</title>
+    <script type="text/javascript" src="jQuery.js"></script>
+    <script type="text/javascript">
+        function  b() {
+            $('#div1').html('<button id="b2">bt2</button>')
+        }
+        $(function () {
+            $('#div1').mousedowm(function () {
+                alert('b222222');
+            })
+        })
+    </script>
+</head>
+<body>
+    <button id="b1" onclick="b()">bt1</button>
+    <div id="div1"></div>
+</body>
+</html>

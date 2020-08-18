@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>react</title>
+<!--    <script src="http://zyliu.xyz/react1.js"></script>-->
+<!--    <script src="http://zyliu.xyz/react2.js"></script>-->
+<!--    <script src="http://zyliu.xyz/react3.js"></script>-->
+    <script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+    <script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+    <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+</head>
+<body>
+
+<div id="example"></div>
+<script type="text/babel">
+
+    ReactDOM.render(
+        <h1>Hello, world!</h1>,
+        document.getElementById('example')
+    );
+    class InputControlES6 extends React.Component
+    {
+        constructor(props)
+        {
+            super(props);
+            this.state={text:'placeholder'};
+        }
+        handleChange(event)
+        {
+            this.setState({
+                text:event.target.value
+            });
+        }
+        render()
+        {
+            return (
+                <div>
+                    <input onChange={this.handleChange}
+                           value={this.props.value}/>
+                </div>
+            );
+        }
+    }
+    ReactDOM.render(
+        <InputControlES6 value='hello'/>,
+        document.getElementById('example')
+    );
+</script>
+
+</body>
+</html>

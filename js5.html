@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js5</title>
+    <style type="text/css">
+        #walk {
+            display: block;
+            background-image:url("timg.png");
+            background-repeat: no-repeat;
+            background-position: -20px -170px;
+            width: 60px;
+            height: 80px;
+            position:absolute;
+
+        }
+    </style>
+    <script type="text/javascript">
+        var i=1;
+        var x=-20;
+        var y=170;
+        var j=10;
+        document.onkeydown=function(event){
+            var e = event || window.event || arguments.callee.caller.arguments[0];
+            console.log(e.keyCode);
+            if(e&&e.keyCode==39)
+            {
+                var w=document.getElementById("walk");
+                w.style.backgroundPosition=x+"px -170px";
+                x-=82;
+                w.style.left=j+"px";
+                j+=10;
+                if(x<-580)x=-20;
+            }
+            if(e&&e.keyCode==37)
+            {
+                var w=document.getElementById("walk");
+                w.style.backgroundPosition=x+"px -85px";
+                x-=82;
+                w.style.left=j+"px";
+                j-=10;
+                if(x<-580)x=-20;
+            }
+            if(e&&e.keyCode==38)
+            {
+                var w=document.getElementById("walk");
+                w.style.backgroundPosition=x+"px -255px";
+                x-=83;
+                w.style.top=i+"px";
+                i-=10;
+                if(x<-580)x=-20;
+            }
+            if(e&&e.keyCode==40)
+            {
+                var w=document.getElementById("walk");
+                w.style.backgroundPosition=x+"px -0px";
+                x-=83;
+                w.style.top=i+"px";
+                i+=10;
+                if(x<-580)x=-20;
+            }
+        };
+    </script>
+</head>
+<body >
+    <span id="walk"> </span>
+</body>
+</html>

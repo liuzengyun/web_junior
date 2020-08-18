@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Generator" content="EditPlus®">
+    <meta name="Author" content="">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>js4</title>
+    <style type="text/css">
+        #walk {
+            display: block;
+            background-image:url("timg.png");
+            background-repeat: no-repeat;
+            background-position: -20px -170px;
+            width: 60px;
+            height: 80px;
+            position:absolute;
+
+        }
+    </style>
+    <script type="text/javascript">
+        <!--
+        var i=1;
+        var x=-20;
+        var y=170;
+        var j=10;
+        function walk(){
+            var w=document.getElementById("walk");
+            w.style.backgroundPosition=x+"px -170px";
+            x-=82;
+            w.style.left=j+"px";
+            j+=10;
+            if(x<-580)x=-20;
+            setTimeout(walk,100);
+
+        }
+        //-->
+    </script>
+</head>
+<body onload="walk()">
+<span id="walk"> </span>
+
+</body>
+</html>

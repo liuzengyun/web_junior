@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax</title>
+    <script type="text/javascript" src="jQuery.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('#user').blur(function () {
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.open("GET","index.jsp?user="+$('#user').val(),true);
+                console.log($('#user').val());
+                xmlhttp.send();
+                xmlhttp.onreadystatechange=function()
+                {
+                    if(xmlhttp.readyState==4 && xmlhttp.status==200)
+                    {
+                        $('#d').html(xmlhttp.responseText);
+                    }
+                }
+            })
+        })
+
+    </script>
+</head>
+<body>
+    <p align="center">用户名：<input type="text" id="user" name="user"></p>
+    <div id="d" align="center"></div>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        body{
+            background-image: url("bd.png");
+        }
+        #regedit{
+            border-radius:30px;
+            background-color: whitesmoke;
+            opacity: 90%;
+            position: absolute;
+            left: 60%;
+            top: 20%;
+            width: 300px;
+            height: 400px;
+            align-content: center;
+        }
+        #user1,#psw,#phonenum,#yanzm,#zhuce{
+            color: grey;
+            border: 10px;
+            height: 30px;
+        }
+        #zhuce{
+            height: 40px;
+            width: 189px;
+            background-color: cornflowerblue;
+        }
+    </style>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script type="text/javascript">
+        $(function () {
+
+            //用户名
+            $('#user1').mousedown(function () {
+                //alert('as')
+                if ($(this).val()=="请设置用户名")
+                {
+                    //alert('as');
+                    $(this).val('');
+                    document.getElementById('user1').style.color = 'black';
+                }
+            })
+            $('#user1').blur(function () {
+                //alert('as')
+                if ($(this).val()=="")
+                {
+                    //alert('22');
+                    $(this).val('请设置用户名');
+                    document.getElementById('user1').style.color = 'grey';
+                }
+            })
+
+            //手机号
+            $('#phonenum').mousedown(function () {
+                //alert('as')
+                if ($(this).val()=="请输入手机号")
+                {
+                    //alert('as');
+                    $(this).val('');
+                    document.getElementById('phonenum').style.color = 'black';
+                }
+            })
+            $('#phonenum').blur(function () {
+                //alert('as')
+                if ($(this).val()=="")
+                {
+                    //alert('22');
+                    $(this).val('请输入手机号');
+                    document.getElementById('phonenum').style.color = 'grey';
+                }
+            })
+
+            //密码
+            $('#psw').mousedown(function () {
+                //alert('as')
+                if ($(this).val()=="请设置密码")
+                {
+                    //alert('as');
+                    $(this).val('');
+                    document.getElementById('psw').type="password";
+                    document.getElementById('psw').style.color = 'black';
+                }
+            })
+            $('#psw').blur(function () {
+                //alert('as')
+                if ($(this).val()=="")
+                {
+                    //alert('22');
+                    $(this).val('请设置密码');
+                    document.getElementById('psw').type="text";
+                    document.getElementById('psw').style.color = 'grey';
+                }
+            })
+
+            //验证码
+            $('#yanzm').mousedown(function () {
+                //alert('as')
+                if ($(this).val()=="4位验证码")
+                {
+                    //alert('as');
+                    $(this).val('');
+                    document.getElementById('yanzm').style.color = 'black';
+                }
+            })
+            $('#yanzm').blur(function () {
+                //alert('as')
+                if ($(this).val()=="")
+                {
+                    //alert('22');
+                    $(this).val('4位验证码');
+                    document.getElementById('yanzm').style.color = 'grey';
+                }
+            })
+
+            $('#danxk').click(function () {
+                document.getElementById('zhuce').style.color = 'black';
+            })
+            $('#zhuce').click(function () {
+                if (document.getElementById('zhuce').style.color=='black'){
+                    alert('注册成功！')
+                }
+            })
+            $('#regedit').mouseenter(function () {
+                document.getElementById('regedit').style.left="60.5%";
+                document.getElementById('regedit').style.top="19.5%";
+            })
+            $('#regedit').mouseleave(function () {
+                document.getElementById('regedit').style.left="60%";
+                document.getElementById('regedit').style.top="20%";
+            })
+        })
+    </script>
+    <script type="text/javascript">
+        butclk = function () {
+            if (document.getElementById('huoqu').value=='获取验证码')
+            {
+                document.getElementById('huoqu').value='    已发送   ';
+                document.getElementById('huoqu').style.color='grey';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="regedit" >
+        <h2 align="center">欢迎注册</h2>
+
+        <p align="center">用户名：<input type="text" id="user1" value="请设置用户名" ></p>
+        <p align="center">手机号：<input type="text" id="phonenum" value="请输入手机号"></p>
+        <p align="center">密&nbsp&nbsp&nbsp码：<input type="text" id="psw" value="请设置密码"></p>
+        <p align="center">验证码：
+            <input type="text" size="7" value="4位验证码" id="yanzm">
+            <input id="huoqu" type="button" onclick="butclk()" value="获取验证码"></p>
+        <p align="center"><input type="radio" id="danxk">已阅读<a target="_blank" href="http://zyliu.xyz">《用户协议》</a>。 </p>
+        <p align="center"><input type="button"  value="注册" id="zhuce"></p>
+    </div>
+
+</body>
+</html>

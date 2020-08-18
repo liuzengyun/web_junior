@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js</title>
+
+<style type="text/css">
+    #div2{
+        background-color: antiquewhite;
+        top: 120px;
+        width: 200px;
+        height: 200px;
+    }
+</style>
+<script type="text/javascript" src="jQuery.js"></script><!--jQuery 3.5.1-->
+<script type="text/javascript">
+    $(function () {
+        $('#r').mousedown(function () {
+            document.getElementById('div2').style.backgroundColor='red';
+        })
+        $('#y').mousedown(function () {
+            document.getElementById('div2').style.backgroundColor='yellow';
+        })
+        $('#black').mousedown(function () {
+            document.getElementById('div2').style.backgroundColor='black';
+        })
+        $('#blue').mousedown(function () {
+            document.getElementById('div2').style.backgroundColor='blue';
+        })
+        $('#o').mousedown(function () {
+            document.getElementById('div2').style.backgroundColor='orange';
+        })
+        $('#g').mousedown(function () {
+            document.getElementById('div2').style.backgroundColor='green';
+        })
+    })
+</script>
+<script type="text/javascript">
+
+</script>
+</head>
+
+<body>
+    <div>
+        <table border="1" width="400" height="100">
+            <tr>
+                <td bgcolor="red" id="r"></td>
+                <td bgcolor="yellow" id="y"></td>
+                <td bgcolor="blue" id="blue"></td>
+                <td bgcolor="black" id="black"></td>
+                <td bgcolor="orange" id="o"></td>
+                <td bgcolor="green" id="g"></td>
+            </tr>
+        </table>
+    </div>
+    <div id="div2"></div>
+
+</body>
+</html>

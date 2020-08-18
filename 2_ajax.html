@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax</title>
+    <script type="text/javascript" src="jQuery.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('#b').mousedown(function () {
+                var xmlhttp;
+                if (window.XMLHttpRequest)
+                {
+                    //  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+                    xmlhttp=new XMLHttpRequest();
+                }
+                else
+                {
+                    // IE6, IE5 浏览器执行代码
+                    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange=function()
+                {
+                    if (xmlhttp.readyState==4 && xmlhttp.status==200)
+                    {
+                        //document.getElementById("d").innerHTML=xmlhttp.responseText;
+                        console.log(xmlhttp.responseText);
+                    }
+                }
+                xmlhttp.open("GET","html.html",true);
+                xmlhttp.send();
+
+            })
+        })
+
+    </script>
+</head>
+<body>
+    <input type="button" id="b" value="ann">
+    <div id="d"></div>
+</body>
+</html>

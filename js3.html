@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js3</title>
+    <style type="text/css">
+        #pic{
+            position: absolute;
+            left:20px;
+        }
+    </style>
+    <script type="text/javascript">
+        var cot=2;
+        var lef=0;
+        function  pao(){
+            document.getElementById('pic').src='w'+cot+'.jpg';
+            cot=cot%6+1;
+            document.getElementById('pic').style.left=lef+'px';
+            lef=lef+20;
+        }
+        setInterval(pao,200);
+
+    </script>
+</head>
+<body>
+    <img id="pic" src="w1.jpg">
+</body>
+</html>

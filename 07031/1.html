@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>07031</title>
+    <script type="text/javascript" src="http://zyliu.xyz/jq.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('#btn').mousedown(function () {
+                $.get("json.jsp",function(data,status){
+                    var json = JSON.parse(data);
+                    var ndata=json.data;
+                    console.log(json);
+                    console.log(ndata[2].age+"   "+ndata.length);
+                    for (var i in ndata)
+                    {
+                        var tr=document.createElement("tr");
+                        tr. id="tr"+ndata[i].id;
+                        var td="<td>"+ndata[i].id+"</td>"+"<td> "+ndata[i].username+"</td>"+"<td>"+ndata[i].age+"</td>";
+                        td+="<td><button onclick='delete1("+ndata[i].id+")'>删除</button></td>";
+                        tr.innerHTML=td;
+                        $('#table').append(tr);
+                    }
+                });
+            })
+        })
+        function  delete1(id) {
+            $.get("delete.jsp?id="+id,function(data,status){
+                console.log('shanchula');
+                $('#tr'+id).hide();
+            });
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="查看" id="btn">
+    <table id="table" border="1">
+
+    </table>
+</body>
+</html>
